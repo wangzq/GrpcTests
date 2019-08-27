@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+	<GrpcVersion>1.22.0</GrpcVersion>
+	<ApplicationIcon />
+	<OutputType>Exe</OutputType>
+	<StartupObject />
+	<RootNamespace>GrpcTests</RootNamespace>
+	<AssemblyName>GrpcTests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+	  <PackageReference Include="Grpc.Core" Version="$(GrpcVersion)" />
+	  <PackageReference Include="Grpc.Core.Api" Version="$(GrpcVersion)" />
+	  <PackageReference Include="Grpc.Tools" Version="$(GrpcVersion)" />
+	  <PackageReference Include="Google.Protobuf" Version="3.9.1" />
+    <ProtoBuf Include="MyService.proto" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="GrpcTests.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="KillAll.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_KillAll.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_RunTests.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_Update.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

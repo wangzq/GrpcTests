@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+	<GrpcVersion>2.23.0</GrpcVersion>
+	<ApplicationIcon />
+	<OutputType>Exe</OutputType>
+	<StartupObject />
+	<RootNamespace>GrpcTests</RootNamespace>
+	<AssemblyName>GrpcTests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GrpcTests1\GrpcHelper.cs" Link="GrpcHelper.cs" />
+    <Compile Include="..\GrpcTests1\Logger.cs" Link="Logger.cs" />
+    <Compile Include="..\GrpcTests1\MyServiceImpl.cs" Link="MyServiceImpl.cs" />
+    <Compile Include="..\GrpcTests1\Program.cs" Link="Program.cs" />
+    <None Include="..\GrpcTests1\GrpcTests.ps1" Link="GrpcTests.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\GrpcTests1\_RunTests.bat" Link="_RunTests.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\GrpcTests1\_KillAll.bat" Link="_KillAll.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\GrpcTests1\_Update.bat" Link="_Update.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <ProtoBuf Include="..\GrpcTests1\MyService.proto" Link="MyService.proto" />
+  </ItemGroup>
+  <ItemGroup>
+	  <PackageReference Include="Grpc.Core" Version="$(GrpcVersion)" />
+	  <PackageReference Include="Grpc.Core.Api" Version="$(GrpcVersion)" />
+	  <PackageReference Include="Grpc.Tools" Version="$(GrpcVersion)" />
+	  <PackageReference Include="Google.Protobuf" Version="3.9.1" />
+  </ItemGroup>
+</Project>

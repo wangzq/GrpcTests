@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+package GrpcTests;
+option csharp_namespace = "GrpcTests";
+
+message EchoRequest {
+	string message = 1;
+}
+message EchoResponse {
+	string message = 1;
+}
+
+message PingRequest {
+  string name = 1;
+}
+message PingResponse {
+}
+
+service MyService {
+  rpc Echo(EchoRequest) returns (EchoResponse) {}
+  rpc Ping(PingRequest) returns (PingResponse) {}
+}
